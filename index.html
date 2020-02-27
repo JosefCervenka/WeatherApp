@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Wheather</title>
+</head>
+<body>
+    <div id="app" class="main">
+        <div class="filter">
+            <div class="infoGet">
+                <input v-model="cityInput" class="input" type="text" id="lname" name="lname" placeholder=" Search.." @keyup.enter="search">
+                <button class="button" v-on:click="search">
+                    <i class="material-icons">search</i>
+                </button>
+            </div>
+            <h1>{{city}}</h1>
+            <p class="temperature">{{temperatureMax}}/{{temperatureMin}} °C</p>
+            <p>{{wheather}}</p>
+        </div>
+    </div>
+<script src="vue-script.js"></script>
+</body>
+</html>
