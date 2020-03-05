@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Wheather</title>
+</head>
+<body>
+    <div id="app" class="main">
+        <div class="filter">
+            <div class="infoGet">
+                <input v-model="cityInput" class="input" type="text" id="lname" name="lname" placeholder=" Search.." @keyup.enter="search">
+                <button class="button" v-on:click="search">
+                    <i class="material-icons">search</i>
+                </button>
+            </div>
+            <div class="">
+                <button class="selection" style="border-radius: 0px 0px 0px 10px; " v-on:click="city_zip = true">
+                    CITY SELECTION
+                </button>
+                <button class="selection" style="border-radius: 0px 0px 10px 0px;" v-on:click="city_zip = false">
+                    ZIP SELECTION
+                </button>
+            </div>
+            <div class="info-main">
+                <div class="nameCity">
+                    <h1>
+                        {{city}} 
+                    </h1>
+                </div>
+                <div class="temperature-info">
+                    <div class="left">
+                        <p>{{temperatureMax}}°C <i class="large material-icons">wb_sunny</i></p> 
+                    </div>
+                    <div class="right">
+                        <p>{{temperatureMin}}°C <i class="large material-icons">ac_unit</i></p>
+                    </div>
+                </div>
+                <div class="temperature-info">
+                    <div class="left">
+                        <p>{{humidity}} % </p>
+                    </div>
+                    <div class="right">
+                        <p>{{windspeed}} m/s <i class="large material-icons">cloud_queue </i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="vue-script.js"></script>
+</body>
+</html>
